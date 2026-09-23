@@ -8,7 +8,8 @@
  *   Rating: 3
  */
 int conditional(int x, int y, int z) {
-#error TODO: Return the equivalent of x ? y : z using bit operations.
+int mask = !!x << 31 >> 31;
+return (y & mask) | (z & ~mask);
 }
 
 int main(void) {

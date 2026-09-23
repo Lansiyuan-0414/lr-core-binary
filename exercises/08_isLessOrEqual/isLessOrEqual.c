@@ -8,7 +8,8 @@
  *   Rating: 3
  */
 int isLessOrEqual(int x, int y) {
-#error TODO: Return 1 when x is less than or equal to y.
+int a = !(((x ^ y) >> 31) + 1) ;
+return (a & ! ((x>>31)+1) ) | (~a & ! (((x + (~y + 1))>>31)+1) | !(x ^ y)) ;
 }
 
 int main(void) {
